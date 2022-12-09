@@ -67,3 +67,5 @@ gcc GMConsole.c -o GMConsole.dll -shared -s
 ```
 
 I used `tcc` to build as it will generate only 6 KB of DLL binary while `gcc` generate 10 KB DLL binary (30 KB without `-s` flag).
+
+If `tcc` fails to compile and gives `tcc: error: undefined symbol '_GetConsoleWindow@0'` error, append `GetConsoleWindow` at the end of `lib/kernel32.def` file located inside `tcc`'s directory.
